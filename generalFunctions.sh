@@ -80,13 +80,13 @@ warn()
 #convert a input string to uppercase
 uppercase()
 {
-	echo $* | tr '[:lower:]' '[:upper:]'
+	echo ${*^^}	
 }
 
 #convert a input string to lower case
 lowercase()
 {
-	echo $* | tr '[:upper:]' '[:lower:]'
+	echo ${*,,}
 }
 
 #chceks if a directory is empty
@@ -145,7 +145,7 @@ textfile2pdf()
 }
 
 #checks if a csv/delmited(defaul is ,) separated file has equal number of columns for all rows, skips blank lines
-delimited_column_count()
+file_column_count()
 {
 	local file="$1"
 	local delimiter="$2"
@@ -158,3 +158,8 @@ delimited_column_count()
 	fi
 }
 
+#usage stips of a pattern from a string
+strip_pattern()
+{
+	printf '%s\n' "${1//$2}"
+}
