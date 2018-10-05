@@ -11,8 +11,6 @@ This scripts has some basic functions that can be used in day to day scripting t
 	Args: 
 	-h	prints this help
 	-D	[OPTIONAL] for debug mode -set vx
-	Example
-	$0 -i input.csv -o outputdir/output.pdf
 EOF
 	exit 1
 }
